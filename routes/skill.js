@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const skillsController = require('../controllers/skill');
 
-// Index route - Get all skills
 router.get('/', skillsController.index);
-
-// Show route - Get a specific skill
+router.get('/new', skillsController.new);
 router.get('/:id', skillsController.show);
+
+router.post('/', skillsController.create);
 
 module.exports = router;
